@@ -208,6 +208,79 @@ transform:translateY(0);
 }
 }
 
+.expCard{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.expHeader{
+display:flex;
+align-items:flex-start;   /* aligns logo with company name */
+gap:18px;
+}
+
+.expHeader h3{
+margin:0;
+}
+
+.expLogo{
+width:72px;
+height:72px;
+border-radius:14px;
+background:white;
+padding:10px;
+object-fit:contain;
+flex-shrink:0;
+margin-top:2px;   /* micro alignment tweak */
+}
+
+.expMeta{
+font-size:13px;
+opacity:.8;
+margin-top:2px;
+}
+
+.expDesc{
+font-size:14px;
+line-height:1.5;
+}
+
+.companyLink{
+text-decoration:none;
+color:var(--text);
+transition:.25s;
+}
+
+.companyLink:hover{
+color:var(--accent);
+}
+
+.badgeWrap{
+display:flex;
+flex-wrap:wrap;
+gap:10px 14px;   /* vertical gap + horizontal gap */
+margin-top:8px;
+}
+
+.badge{
+font-size:12px;
+padding:6px 12px;
+border-radius:18px;
+background:#1e293b;
+border:1px solid rgba(56,189,248,0.4);
+color:var(--text);
+transition:.25s;
+white-space:nowrap; /* prevents text from breaking */
+}
+
+.designation{
+font-size:14px;
+color:var(--accent);
+font-weight:600;
+margin:2px 0 4px 0;   /* reduced vertical spacing */
+}
+
 </style>
 </head>
 
@@ -255,8 +328,7 @@ style="width:260px;height:260px;margin:auto" loop autoplay></lottie-player>
 <h2>About</h2>
 <div class="card">
 Cloud & Infrastructure Engineer experienced in managing IaaS and SaaS services, cloud infrastructure, Linux systems, and automation. Skilled in managing Linux distributions with a strong focus on maintaining system uptime, performance,
-and observability. Experienced in implementing automation, conducting OS migrations, managing containerized workloads, and supporting infrastructure to ensure operational excellence in high-availability environments. Adept at
-collaborating within teams, quickly learning new technologies, and solving complex problems.
+and observability. Experienced in implementing automation, conducting OS migrations, managing containerized workloads, and supporting infrastructure to ensure operational excellence in high-availability environments. Adept at collaborating within teams, quickly learning new technologies, and solving complex problems.
 </div>
 </section>
 
@@ -284,12 +356,74 @@ style="width:250px;height:250px;margin:auto" loop autoplay></lottie-player>
 
 <section id="experience">
 <h2>Experience</h2>
-<div class="card">
-• AWS production infrastructure<br>
-• Kubernetes deployments<br>
-• CI/CD pipelines<br>
-• Linux automation<br>
-• 99.99% SLA support
+<div class="card expCard">
+<div class="expHeader">
+<img src="images/csod-logo.png" class="expLogo">
+<div>
+<h3>
+<a href="https://www.cornerstoneondemand.com" target="_blank" class="companyLink">
+Cornerstone OnDemand
+</a>
+</h3>
+<p class="designation">Jr. CloudOps Engineer</p>
+<div class="badgeWrap">
+<span class="badge">Full Time</span>
+<span class="badge">Nov 2023 – May 2025</span>
+<span class="badge">Pune, India</span>
+<span class="badge">On-Site</span>
+</div>
+</div>
+</div>
+<p class="expDesc">
+CloudOps Engineer with hands-on experience in infrastructure monitoring (New Relic, Splunk, Kibana, CheckMK), production server management (AWS, HPE iLO, DELL iDRAC, vCenter), and maintaining Kubernetes-based environments with F5 load balancer integration.<br>
+Strong in Linux administration, SRE practices, cloud service configuration, and incident response ensuring 99.99% SLA and seamless system availability.
+</p>
+</div>
+
+<div class="card expCard">
+<div class="expHeader">
+<img src="images/iacsd-logo.jpg" class="expLogo">
+<div>
+<h3>
+<a href="https://iacsd.com" target="_blank" class="companyLink">
+Institute for Advanced Computing and Software Development (IACSD)
+</a>
+</h3>
+<p class="designation">System Admin Trainee ( Linux )</p>
+<div class="badgeWrap">
+<span class="badge">Apprenticeship</span>
+<span class="badge">Mar 2023 – Sep 2023</span>
+<span class="badge">Pune, India</span>
+<span class="badge">On-Site</span>
+</div>
+</div>
+</div>
+<p class="expDesc">
+Gained hands-on experience in Linux system administration with a focus on supporting DevOps workflows and secure system configurations.<br>
+Assisted in implementing user access controls, log auditing, and vulnerability assessments as part of cybersecurity best practices.<br>
+Worked with version control (Git), shell scripting, and basic CI/CD tools to support automated deployments and environment management.<br>
+Participated in system monitoring, incident response drills, and secure configuration of services in test/dev environments.
+</p>
+</div>
+
+<div class="card expCard">
+<div class="expHeader">
+<img src="images/grow9dig-logo.jpg" class="expLogo">
+<div>
+<h3>Grow9Digital</h3>
+<p class="designation">Digital Marketing Intern</p>
+<div class="badgeWrap">
+<span class="badge">Internship</span>
+<span class="badge">Apr 2020 – May 2020</span>
+<span class="badge">Mumbai, India</span>
+<span class="badge">Remote</span>
+</div>
+</div>
+</div>
+<p class="expDesc">
+Worked on WordPress to develop an effective website, leveraging its features to enhance website aesthetics and functionality.<br>
+Gained hands-on experience with Google Analytics to track and analyze website performance and user behavior.
+</p>
 </div>
 </section>
 
@@ -371,3 +505,4 @@ document.getElementById("visitCount").innerText=count;
 
 </body>
 </html>
+
