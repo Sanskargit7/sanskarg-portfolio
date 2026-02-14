@@ -478,7 +478,7 @@ style="width:250px;height:250px;margin:auto" loop autoplay></lottie-player>
 <footer>
 © 2026 SANSKAR GUPTA - DevOps Engineer  
 <div class="counter">
-Visitors: <span id="visitCount"></span>
+Visitors: <span id="gc-visitors"></span>
 </div>
 </footer>
 
@@ -497,12 +497,18 @@ span.style.animationDelay=`${i*0.15}s`;
 nameEl.appendChild(span);
 });
 
-let count=localStorage.getItem("visits");
-if(!count){count=1}else{count++}
-localStorage.setItem("visits",count);
-document.getElementById("visitCount").innerText=count;
 </script>
 
+<script>
+fetch("https://sanskarg.goatcounter.com/counter/TOTAL.json")
+.then(response => response.json())
+.then(data => {
+    document.getElementById("gc-visitors").textContent = data.count;
+});
+</script>
+
+<script data-goatcounter="https://sanskarg.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
 
