@@ -498,17 +498,12 @@ nameEl.appendChild(span);
 });
 </script>
 <script>
-document.addEventListener("DOMContentLoaded", function () {
+document.querySelector("form").addEventListener("submit", function () {
 
     const now = new Date();
 
-    const istTime = now.toLocaleString("en-IN", {
-        timeZone: "Asia/Kolkata",
-        dateStyle: "medium",
-        timeStyle: "medium"
-    });
-
-    document.getElementById("istTime").value = istTime;
+    document.getElementById("istTime").value =
+        now.toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
 
 });
 </script>
