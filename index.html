@@ -497,6 +497,21 @@ span.style.animationDelay=`${i*0.15}s`;
 nameEl.appendChild(span);
 });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+    const now = new Date();
+
+    const istTime = now.toLocaleString("en-IN", {
+        timeZone: "Asia/Kolkata",
+        dateStyle: "medium",
+        timeStyle: "medium"
+    });
+
+    document.getElementById("istTime").value = istTime;
+
+});
+</script>
 </body>
 </html>
 
