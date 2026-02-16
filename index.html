@@ -492,7 +492,7 @@ style="width:250px;height:250px;margin:auto" loop autoplay></lottie-player>
 
 <script>
 
-const text="SANSKAR GUPTA";   // replace with your real name
+const text="SANSKAR GUPTA";   
 const nameEl=document.getElementById("name");
 
 [...text].forEach((char,i)=>{
@@ -555,6 +555,17 @@ document.addEventListener("contextmenu", function(e){
 </script>
 <script>
 document.addEventListener("copy", e => e.preventDefault());
+</script>
+<script>
+document.onkeydown = function(e){
+
+    if(e.keyCode == 123) return false; // F12
+
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 73) return false; // Ctrl + Shift + I
+
+    if(e.ctrlKey && e.shiftKey && e.keyCode == 67) return false; // Ctrl + Shift + C
+
+};
 </script>
 </body>
 </html>
