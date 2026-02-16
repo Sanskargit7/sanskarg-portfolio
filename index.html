@@ -547,6 +547,15 @@ form.addEventListener("submit", async function(e) {
 
 });
 </script>
+<script>
+document.addEventListener("contextmenu", function(e){
+    e.preventDefault();
+    alert("Right click is disabled on this portfolio.");
+});
+</script>
+<script>
+document.addEventListener("copy", e => e.preventDefault());
+</script>
 </body>
 </html>
 
