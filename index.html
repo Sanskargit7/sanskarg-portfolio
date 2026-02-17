@@ -509,7 +509,7 @@ loop autoplay>
 </section>
 
 <footer>
-© 2026 SANSKAR GUPTA - TechOps Engineer  
+© <span id="year"></span> SANSKAR GUPTA - TechOps Engineer  
 <div class="counter">
 <img src="https://hits.sh/sanskargit7.github.io/sanskarg-portfolio.svg?style=flat-square&label=Visitors&color=0ea5e9"/>
 </div>
@@ -591,6 +591,9 @@ document.onkeydown = function(e){
     if(e.ctrlKey && e.shiftKey && e.keyCode == 67) return false; // Ctrl + Shift + C
 
 };
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 </script>
 </body>
 </html>
