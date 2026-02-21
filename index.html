@@ -299,6 +299,41 @@ padding:0 6%;
 section{
 padding:12px 0;
 }
+
+#firstName, #lastName{
+display:inline-block;
+opacity:0;
+}
+
+.slideLeft{
+animation:slideFromLeft 1s ease forwards;
+}
+
+.slideRight{
+animation:slideFromRight 1s ease forwards;
+}
+
+@keyframes slideFromLeft{
+from{
+transform:translateX(-120px);
+opacity:0;
+}
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
+
+@keyframes slideFromRight{
+from{
+transform:translateX(120px);
+opacity:0;
+}
+to{
+transform:translateX(0);
+opacity:1;
+}
+}
 </style>
 </head>
 
@@ -326,7 +361,10 @@ padding:12px 0;
 
 <div class="hero">
 
-<h1 id="name"></h1>
+<h1>
+  <span id="firstName"></span>
+  <span id="lastName"></span>
+</h1>
 <p>DevOps / CloudOps Engineer</p>
 
 <a href="sanskar_resume.pdf" download>
@@ -516,17 +554,22 @@ loop autoplay>
 </footer>
 
 <script>
+const first = "SANSKAR";
+const last = "GUPTA";
 
-const text="SANSKAR GUPTA";   
-const nameEl=document.getElementById("name");
+const firstEl = document.getElementById("firstName");
+const lastEl = document.getElementById("lastName");
 
-[...text].forEach((char,i)=>{
-let span=document.createElement("span");
-span.innerHTML = char === " " ? "&nbsp;" : char;
-span.style.animationDelay=`${i*0.15}s`;
-nameEl.appendChild(span);
-});
+firstEl.textContent = first;
+lastEl.textContent = " " + last;
+
+firstEl.classList.add("slideLeft");
+
+setTimeout(() => {
+    lastEl.classList.add("slideRight");
+}, 300); // slight delay for better effect
 </script>
+
 <script>
 document.querySelector("form").addEventListener("submit", function () {
 
