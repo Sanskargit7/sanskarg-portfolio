@@ -95,9 +95,14 @@ right:0;
 background:var(--navDrop);
 padding:8px 12px;
 border-radius:8px;
+min-width:140px;
+z-index:1000;
+transition:opacity 0.2s ease;
 }
 
-.menu:hover .dropdown{display:block}
+.dropdown.show{
+display:block;
+}
 
 .dropdown a{
 display:block;
@@ -345,7 +350,7 @@ opacity:1;
 <div style="display:flex;gap:12px">
 
 <div class="menu">
-<button>Menu ☰</button>
+<button id="menuBtn">Menu ☰</button>
 <div class="dropdown">
 <a href="#about">About</a>
 <a href="#skills">Skills</a>
@@ -637,6 +642,20 @@ document.onkeydown = function(e){
 </script>
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const dropdown = document.querySelector(".dropdown");
+
+menuBtn.addEventListener("click", function(e){
+    e.stopPropagation();
+    dropdown.classList.toggle("show");
+});
+
+// Close when clicking outside
+document.addEventListener("click", function(){
+    dropdown.classList.remove("show");
+});
 </script>
 </body>
 </html>
